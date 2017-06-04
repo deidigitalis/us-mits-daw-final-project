@@ -6,7 +6,12 @@
 <ui:composition>
 	<footer class="footer">
 		<hr />
-		<p>© 2017 Pablo Caballero Pérez</p>
+		<p>
+			&#160;©
+			<h:outputText value="#{msgs.CopyrightYear}" />
+			&#160;
+			<h:outputText value="#{msgs.CopyrightAuthor}" />
+		</p>
 	</footer>
 </ui:composition>
 </html>
