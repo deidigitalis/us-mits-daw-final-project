@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <ui:composition>
 	<footer class="footer">
 		<hr />
-		<p>
-			&#160;©
-			<h:outputText value="#{msgs.CopyrightYear}" />
-			&#160;
-			<h:outputText value="#{msgs.CopyrightAuthor}" />
-		</p>
+
+		<div class="row" style="margin: 1em;">
+			<div class="col-md-3">
+				&#160;©
+				<h:outputText value="#{msgs.CopyrightYear}" />
+				&#160;
+				<h:outputText value="#{msgs.CopyrightAuthor}" />
+			</div>
+			<div class="col-md-7"></div>
+			<div class="col-md-2">
+				<h:form>
+					<h:selectOneMenu class="form-control" onchange="submit()"
+						value="#{beanLanguage.selectedShortCode}"
+						valueChangeListener="#{beanLanguage.onChangeLanguage}">
+						<f:selectItems value="#{beanLanguage.languages}" var="language"
+							itemValue="#{language.shortCode}" itemLabel="#{language.name}" />
+					</h:selectOneMenu>
+				</h:form>
+
+			</div>
+		</div>
 	</footer>
 </ui:composition>
 </html>
