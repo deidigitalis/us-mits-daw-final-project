@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<ui:component>
+	<cc:interface componentType="component.searchStudent">
+		<cc:attribute name="action"
+			method-signature="java.lang.Object action(models.StudentSearch)"
+			required="true" />
+	</cc:interface>
+	<cc:implementation>
+		<h:messages style="color: orange;" />
+		<h:form>
+			<div class="form-group">
+				<h:outputLabel for="username" class="col-md-2 control-label" value="#{msgs.LabelUsername}" />
+				<div class="col-md-10">
+					<h:inputText id="username" label="#{msgs.LabelUsername}" value="#{cc.username}" required="true"
+						class="form-control">
+						<f:validateLength minimum="8" />
+					</h:inputText>
+				</div>
+			</div>
+			<div class="form-group">
+				<h:outputLabel for="degree" class="col-md-2 control-label" value="#{msgs.LabelDegree}" />
+				<div class="col-md-10">
+					<h:inputText id="degree" label="#{msgs.LabelDegree}" value="#{cc.degree}" required="true"
+						class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<h:outputLabel for="endYear" class="col-md-2 control-label" value="#{msgs.LabelEndYear}"/>
+				<div class="col-md-10">
+					<h:inputText id="endYear" label="#{msgs.LabelEndYear}" value="#{cc.endYear}"
+						class="form-control">
+						<f:convertNumber integerOnly="true" />
+						<f:validateLongRange minimum="1900" maximum="2016" />
+					</h:inputText>
+				</div>
+			</div>
+			<div class="form-group">
+				<h:outputLabel for="birthDate" class="col-md-2 control-label" value="#{msgs.LabelBirthDate}" />
+				<div class="col-md-10">
+					<h:inputText id="birthDate" label="#{msgs.LabelBirthDate}" p:type="date" value="#{cc.birthDate}"
+						class="form-control">
+						<f:convertDateTime pattern="dd-MMM-yyyy" />
+					</h:inputText>
+				</div>
+			</div>
+
+			<div class="form-group col-sm-12" style="margin-top: 1em;">
+				<h:commandButton id="submitButton" value="#{msgs.Submit}"
+					action="#{cc.submit}" class="btn btn-primary" />
+			</div>
+
+		</h:form>
+	</cc:implementation>
+</ui:component>
+</html>
