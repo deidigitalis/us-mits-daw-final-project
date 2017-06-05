@@ -3,7 +3,8 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:tags="http://daw2017jsf.com/jsf/tags">
 <ui:composition template="/templates/page-template.xhtml">
 	<ui:param name="pageTitle" value="#{msgs.PageTitle}" />
 	<ui:define name="panel-main">
@@ -11,9 +12,7 @@
 			<h2 class="col-md-11">
 				<h:outputText value="#{msgs.LabelAlumnInformation}" />
 			</h2>
-			<form>
-				<!-- HERE GOES FORM -->
-			</form>
+			<tags:search-student-form id="search-student-form" />
 		</div>
 	</ui:define>
 </ui:composition>
