@@ -1,11 +1,8 @@
 package beans;
 
 import java.io.Serializable;
-import java.util.Date;
-
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
-
 import models.StudentSearch;
 
 @Named

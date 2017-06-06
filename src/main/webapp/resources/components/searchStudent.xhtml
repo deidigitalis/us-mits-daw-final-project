@@ -13,38 +13,50 @@
 			required="true" />
 	</cc:interface>
 	<cc:implementation>
-		<h:messages style="color: orange;" />
+		<div class="form-group col-sm-12">
+			<h:messages style="color: orange;" />
+		</div>
 		<h:form>
 			<div class="form-group">
-				<h:outputLabel for="username" class="col-md-2 control-label" value="#{msgs.LabelUsername}" />
+				<h:outputLabel for="username" class="col-md-2 control-label"
+					value="#{msgs.LabelUsername}" />
 				<div class="col-md-10">
-					<h:inputText id="username" label="#{msgs.LabelUsername}" value="#{cc.username}" required="true"
+					<h:inputText id="username" label="#{msgs.LabelUsername}"
+						value="#{cc.username}" required="true"
+						requiredMessage="#{msgs.LabelUsername}: #{msgs.InputUsernameValidatorMessage}"
+						validatorMessage="#{msgs.InputUsernameValidatorMessage}"
 						class="form-control">
 						<f:validateLength minimum="8" />
 					</h:inputText>
 				</div>
 			</div>
 			<div class="form-group">
-				<h:outputLabel for="degree" class="col-md-2 control-label" value="#{msgs.LabelDegree}" />
+				<h:outputLabel for="degree" class="col-md-2 control-label"
+					value="#{msgs.LabelDegree}" />
 				<div class="col-md-10">
-					<h:inputText id="degree" label="#{msgs.LabelDegree}" value="#{cc.degree}" required="true"
+					<h:inputText id="degree" label="#{msgs.LabelDegree}"
+						value="#{cc.degree}" required="true"
+						requiredMessage="#{msgs.LabelDegree}: #{msgs.InputDegreeValidatorMessage}"
 						class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
-				<h:outputLabel for="endYear" class="col-md-2 control-label" value="#{msgs.LabelEndYear}"/>
+				<h:outputLabel for="endYear" class="col-md-2 control-label"
+					value="#{msgs.LabelEndYear}" />
 				<div class="col-md-10">
-					<h:inputText id="endYear" label="#{msgs.LabelEndYear}" value="#{cc.endYear}"
-						class="form-control">
+					<h:inputText id="endYear" label="#{msgs.LabelEndYear}"
+						value="#{cc.endYear}" class="form-control">
 						<f:convertNumber integerOnly="true" />
 						<f:validateLongRange minimum="1900" maximum="2016" />
 					</h:inputText>
 				</div>
 			</div>
 			<div class="form-group">
-				<h:outputLabel for="birthDate" class="col-md-2 control-label" value="#{msgs.LabelBirthDate}" />
+				<h:outputLabel for="birthDate" class="col-md-2 control-label"
+					value="#{msgs.LabelBirthDate}" />
 				<div class="col-md-10">
-					<h:inputText id="birthDate" label="#{msgs.LabelBirthDate}" p:type="date" value="#{cc.birthDate}"
+					<h:inputText id="birthDate" label="#{msgs.LabelBirthDate}"
+						p:type="date" value="#{cc.birthDate}" p:placeholder="dd-MMM-yyyy"
 						class="form-control">
 						<f:convertDateTime pattern="dd-MMM-yyyy" />
 					</h:inputText>
