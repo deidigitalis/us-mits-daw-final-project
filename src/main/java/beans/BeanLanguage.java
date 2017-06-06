@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.Optional;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Named;
@@ -15,7 +15,7 @@ import javax.inject.Named;
 import models.Language;
 
 @Named
-@SessionScoped
+@RequestScoped
 public class BeanLanguage implements Serializable {
 
 	/**

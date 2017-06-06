@@ -1,12 +1,14 @@
 package beans;
 
 import java.io.Serializable;
-import javax.enterprise.context.SessionScoped;
+
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+
 import models.StudentSearch;
 
 @Named
-@SessionScoped
+@RequestScoped
 public class BeanSearch implements Serializable {
 	private StudentSearch studentSearch;
 
